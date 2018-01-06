@@ -1,0 +1,1 @@
+web: gunicorn dailymenu.wsgi --log-file -

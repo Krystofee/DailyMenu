@@ -21,9 +21,10 @@ LOGIN_REDIRECT_URL = 'menu:list'
 
 DEBUG = True
 
-HOSTNAME = 'localhost:8000'
-USED_PROTOCOL = 'http://'
-INTERNAL_IPS = ['127.0.0.1']
+HOSTNAME = 'krystofee-daily-menu.herokuapp.com'
+ALLOWED_HOSTS = ['krystofee-daily-menu.herokuapp.com']
+USED_PROTOCOL = 'https://'
+INTERNAL_IPS = []
 
 
 # Application definition
@@ -119,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-#STATIC_ROOT =
+STATIC_ROOT = os.path.join(BASE_DIR, 'www-static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
