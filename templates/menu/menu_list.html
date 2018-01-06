@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block 'main-content' %}
+
+<div class="container">
+    ({{date_to}} - {{date_from}})
+</div>
+
+<table class="table table-sm">
+    {% for menu in object_list %}
+        <thead>
+            <tr>
+                <th>
+                    <h4>
+                        {{menu.name}}
+                    </h4>
+                    <span class="badge badge-success">
+                        updated at {{menu.updated}}
+                    </span>&nbsp;
+                    <span class="badge badge-primary">
+                        url: <a href="{{menu.url}}" class="text-white">{{menu.url}}</a>
+                    </span>
+                </th>
+                <th class="text-right">
+                    <a class="btn btn-sm btn-primary" href="{% url 'menu:update' pk=menu.id %}">Edit</a>&nbsp;
+                    <a class="btn btn-sm btn-danger" href="{% url 'menu:delete' pk=menu.id %}">Delete</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in menu.recent_entries %}
+                <tr>
+                    <td>{{entry.name}}</td>
+                    <td class="text-right">{{entry.price}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    {% endfor %}
+</table>
+
+{% endblock 'main-content' %}

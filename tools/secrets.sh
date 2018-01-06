@@ -1,0 +1,1 @@
+export DJANGO_SECRET_KEY='uoxo$_j93qcgxf@ve@(zld$ntp6$m=a6^gr#&ei(j&0lw6rq@$'

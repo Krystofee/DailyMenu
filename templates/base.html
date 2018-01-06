@@ -1,0 +1,63 @@
+{% load staticfiles pipeline %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>DailyMenu</title>
+
+        {% stylesheet 'css' %}
+
+    </head>
+
+    <body>
+        <section role="navigation">
+            <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-sm static-top">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'index' %}">DailyMenu</a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="navbar-nav float-left">
+                            <a href="{% url 'menu:create' %}" class="nav-link">manage</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav float-right">
+                        {% if request.user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Logged as: {{request.user.username}}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Login</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </section>
+
+        <br>
+
+        <div class="container">
+            {% block 'main-content' %}
+            {% endblock 'main-content' %}
+        </div>
+
+        <footer>
+            {% block 'footer' %}
+            {% endblock 'footer' %}
+        </footer>
+
+        {% javascript 'js' %}
+    </body>
+</html>

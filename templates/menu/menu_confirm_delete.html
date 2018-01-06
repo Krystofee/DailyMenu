@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block 'main-content' %}
+
+<div class="container">
+    <h1 class="title">
+        Delete menu {{ object.name }}
+    </h1>
+</div>
+
+<div class="container">
+    <div class="content">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Are your sure to delete this menu?</p>
+            {% buttons %}
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            {% endbuttons %}
+        </form>
+    </div>
+</div>
+
+{% endblock 'main-content' %}
