@@ -23,7 +23,7 @@ DEBUG = True
 
 HOSTNAME = 'krystofee-daily-menu.herokuapp.com'
 USED_PROTOCOL = 'https://'
-INTERNAL_IPS = ['127.0.0.1']
+INTERNAL_IPS = []
 
 
 # Application definition
