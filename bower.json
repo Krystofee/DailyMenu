@@ -9,7 +9,7 @@
     "jquery": "^3.2.1",
     "bootstrap": "^4.0.0-beta.3",
     "tether": "^1.4.3",
-    "open-iconic": "^1.1.1"
+    "tether": "^1.4.3"
   },
   "license": "ISC",
   "homepage": "",
