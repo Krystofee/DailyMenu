@@ -4,3 +4,4 @@ django-pipeline
 psycopg2==2.7.3.2
 bs4
 urllib3
+gunicorn
