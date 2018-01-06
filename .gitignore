@@ -103,3 +103,5 @@ ENV/
 
 .tools/
 .bower_components/*
+
+./db_dailymenu

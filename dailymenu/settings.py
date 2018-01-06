@@ -21,8 +21,8 @@ LOGIN_REDIRECT_URL = 'menu:list'
 
 DEBUG = True
 
-HOSTNAME = 'localhost:8000'
-USED_PROTOCOL = 'http://'
+HOSTNAME = 'krystofee-daily-menu.herokuapp.com'
+USED_PROTOCOL = 'https://'
 INTERNAL_IPS = ['127.0.0.1']
 
 
